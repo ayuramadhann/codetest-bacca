@@ -1,8 +1,8 @@
 <template>
 
-  <div class="max-w-screen-xl bg-gray-950 flex flex-wrap items-center justify-between mx-auto p-4 mt-4">
+  <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto mt-4 bg-gray-950">
     <a href="https://flowbite.com/" class="flex items-center">
-      <span class="self-center text-lg whitespace-nowrap text-white ml-4">Unsave Product</span>
+      <span class="self-center ml-4 text-lg text-white whitespace-nowrap">Unsave Product</span>
     </a>
     <div class="w-full md:block md:w-auto">
       <button type="button"
@@ -12,9 +12,9 @@
     </div>
   </div>
 
-  <section class="body-font overflow-hidden">
-    <div class="max-w-screen-xl mx-auto flex flex-wrap py-5 justify-between">
-      <div class="lg:w-7/12 w-full mb-6 h-1/2  lg:mb-0 bg-white rounded-lg p-5">
+  <section class="overflow-hidden body-font">
+    <div class="flex flex-wrap justify-between max-w-screen-xl py-5 mx-auto">
+      <div class="w-full p-5 mb-6 bg-white rounded-lg lg:w-7/12 h-1/2 lg:mb-0">
         <form>
           <div class="mb-6">
             <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Title</label>
@@ -30,8 +30,8 @@
           </div>
         </form>
       </div>
-      <div class="lg:w-2/5 w-full  mb-6 lg:mb-0 bg-white rounded-lg p-5">
-        <h2 class="text-gray-900 text-lg title-font font-medium mb-6">Product organization</h2>
+      <div class="w-full p-5 mb-6 bg-white rounded-lg lg:w-2/5 lg:mb-0">
+        <h2 class="mb-3 text-lg font-medium text-gray-900 title-font">Product organization</h2>
         <div class="mb-6">
           <label for="categorybutton" class="block mb-2 text-sm font-medium text-gray-900">Product
             Category</label>
@@ -39,7 +39,7 @@
             class="border text-left border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5">Search
             product categories</button>
           <!-- Dropdown menu -->
-          <div id="category" class="hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow">
+          <div id="category" class="absolute hidden bg-white divide-y divide-gray-100 rounded-lg shadow">
             <ul class="py-2 text-sm text-gray-700 ">
               <li>
                 <a href="#" class="block px-4 py-2 hover:bg-blue-100 ">Category A</a>
@@ -48,7 +48,7 @@
                 <a href="#" class="block px-4 py-2 hover:bg-blue-100 ">Category B</a>
               </li>
               <li>
-                <a href="#" @click="openModal" class="block text-sm text-blue-600 px-4 py-2 hover:bg-blue-100 ">Add
+                <a href="#" @click="openModal" class="block px-4 py-2 text-sm text-blue-600 hover:bg-blue-100 ">Add
                   Another Category
                 </a>
               </li>
@@ -74,8 +74,8 @@
             placeholder="Find or create tags">
         </div>
       </div>
-      <div class="lg:w-7/12 w-full mb-6 h-1/2  lg:mb-0 bg-white rounded-lg p-5">
-        <h2 class="text-gray-900 text-lg title-font font-medium mb-4">Inventory</h2>
+      <div class="w-full p-5 mb-6 bg-white rounded-lg lg:w-7/12 h-1/2 lg:mb-0">
+        <h2 class="mb-4 text-lg font-medium text-gray-900 title-font">Inventory</h2>
         <div class="flex items-center mb-6">
           <input id="default-checkbox" type="checkbox" v-model="quantity"
             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 ">
@@ -84,21 +84,21 @@
         </div>
         <div>
           <div class="flex justify-between">
-            <h2 class="text-gray-900 text-lg title-font font-medium mb-6">Quantity</h2>
-            <p class="text-gray-500 text-sm" :class="{ 'hidden': quantity}">Not tracked</p>
+            <h2 class="mb-6 text-lg font-medium text-gray-900 title-font">Quantity</h2>
+            <p class="text-sm text-gray-500" :class="{ 'hidden': quantity}">Not tracked</p>
             <input type="number" id="visitors"
               class=" border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-20 h-10 px-2.5"
               placeholder="" :class="{ 'hidden': !quantity}">
           </div>
           <div class="flex justify-between " :class="{ 'hidden': !quantity}">
-            <h2 class="text-gray-900 text-lg title-font font-medium mb-6">Low Quantity Warning</h2>
+            <h2 class="mb-6 text-lg font-medium text-gray-900 title-font">Low Quantity Warning</h2>
             <input type="number" id="visitors"
               class="border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-20 h-10 px-2.5"
               placeholder="">
           </div>
         </div>
         <hr>
-        <div class="flex items-center mb-6 mt-4">
+        <div class="flex items-center mt-4 mb-6">
           <input id="default-checkbox-sku" type="checkbox" v-model="sku"
             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 ">
           <label for="default-checkbox-sku" class="ml-2 text-sm font-medium text-gray-900 ">This
@@ -120,7 +120,7 @@
         </div>
 
       </div>
-      <div class="lg:w-7/12 w-full mb-6 h-1/2 mt-4 flex justify-end">
+      <div class="flex justify-end w-full mt-4 mb-6 lg:w-7/12 h-1/2">
         <button type="button"
           class="text-white bg-green-800 hover:bg-green-700 rounded-lg focus:ring-4 focus:ring-blue-300 font-medium text-sm px-7 py-2.5">Save</button>
       </div>
@@ -138,59 +138,58 @@
         class="inline-block w-full overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl align-center sm:my-8 sm:align-middle sm:w-full lg:w-1/2"
         role="dialog" aria-modal="true" aria-labelledby="modal-headline">
 
-        <form @submit.prevent="submitCategory" class="mt-5" >
+        <form @submit.prevent="submitCategory" >
           <div class="p-5 bg-white">
-            <div class="flex justify-between mb-5 modal-header">
-              <h2 class="text-gray-900 text-lg title-font font-medium">Product organization</h2>
+            <div class="flex justify-between mb-4 modal-header">
+              <h2 class="text-lg font-medium text-gray-900 title-font">Add Category</h2>
             </div>
-            <hr>
-            <div class="mb-6">
-              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 mt-4">Category
+            <div class="mb-4">
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Category
                 Name*</label>
               <input type="text" id="name" v-model="name"
                 class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
               <small class="text-red-600" v-if="errors">{{ errors }}</small>
             </div>
-            <div class="mb-6">
+            <div class="mb-4">
               <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Parent
                 Category</label>
               <input type="text" id="brand" v-model="parent"
                 class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             </div>
-            <div class="mb-6">
+            <div class="mb-4">
               <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Category Banner
                 (200 x 200)</label>
               <!-- component -->
-              <div class="bg-white rounded-lg mt-3">
-                <div class="file_upload py-7 relative border-4 border-dotted border-gray-300 rounded-lg w-full">
-                  <div class="input_field flex flex-col w-max mx-auto text-center">
+              <div class="mt-3 bg-white rounded-lg">
+                <div class="relative w-full py-3 border-4 border-gray-300 border-dotted rounded-lg file_upload">
+                  <div class="flex flex-col mx-auto text-center input_field w-max">
                     <label>
-                      <input class="text-sm cursor-pointer w-36 hidden" type="file" multiple />
+                      <input class="hidden text-sm cursor-pointer w-36" type="file" multiple />
                       <div
-                        class="text bg-blue-100 text-blue-600 border border-gray-300 rounded cursor-pointer p-1 px-3 ">
+                        class="p-1 px-3 text-sm text-blue-600 bg-blue-100 border border-gray-300 rounded cursor-pointer text ">
                         Add Files</div>
                     </label>
 
-                    <div class="title text-gray-500">Accepts images, videos, or 3D models</div>
+                    <small class="text-gray-500 title">Accepts images, videos, or 3D models</small>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="mb-6">
+            <div class="mb-4">
               <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Category Icon (32
                 x 32)</label>
               <!-- component -->
-              <div class="bg-white rounded-lg mt-3">
-                <div class="file_upload py-7 relative border-4 border-dotted border-gray-300 rounded-lg w-full">
-                  <div class="input_field flex flex-col w-max mx-auto text-center">
+              <div class="mt-3 bg-white rounded-lg">
+                <div class="relative w-full py-3 border-4 border-gray-300 border-dotted rounded-lg file_upload">
+                  <div class="flex flex-col mx-auto text-center input_field w-max">
                     <label>
-                      <input class="text-sm cursor-pointer w-36 hidden" type="file" multiple />
+                      <input class="hidden text-sm cursor-pointer w-36" type="file" multiple />
                       <div
-                        class="text bg-blue-100 text-blue-600 border border-gray-300 rounded cursor-pointer p-1 px-3 ">
+                        class="p-1 px-3 text-sm text-blue-600 bg-blue-100 border border-gray-300 rounded cursor-pointer text ">
                         Add Files</div>
                     </label>
 
-                    <div class="title text-gray-500">Accepts images, videos, or 3D models</div>
+                    <small class="text-gray-500 title">Accepts images, videos, or 3D models</small>
                   </div>
                 </div>
               </div>
